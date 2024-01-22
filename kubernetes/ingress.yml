@@ -6,6 +6,9 @@ metadata:
     #nginx.ingress.kubernetes.io/rewrite-target: /
     spec.ingressClassName: nginx
 spec:
+  tls:
+  - host: www.smboard.com
+    secretName: tlssecret
   rules:
     - host: www.smboard.com
       http:
