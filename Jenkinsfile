@@ -55,6 +55,7 @@ pipeline {
                sh "sed -i 's/{{VERSION}}/${BUILD_NUMBER}/g' ./kubernetes/smboard.yml"
                sh "sed -i 's/{{VERSION}}/${BUILD_NUMBER}/g' ./kubernetes/mariadb.yml"
                sh "kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission"
+               sh "kubectl create secret tls tlssecret --key ./cert/server.key --cert ./cert/server.crt"
                sh "kubectl apply -f ./kubernetes/mariadb.yml"
                sh "kubectl apply -f ./kubernetes/smboard.yml"
                sh "kubectl apply -f ./kubernetes/apache2.yml"
