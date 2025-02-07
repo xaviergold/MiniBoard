@@ -42,6 +42,7 @@ public class BoardController {
 	
 	//미니 게시판 목록 보기
         //Source Change #1
+        //Source Change #2
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String postList(HttpSession session, Model model, @RequestParam(name="page",required=false) int num, 
 			@RequestParam(name="searchType", defaultValue="title", required=false) String searchType, 
