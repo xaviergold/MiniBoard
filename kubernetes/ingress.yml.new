@@ -28,7 +28,7 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: smboard-ingress
+  name: miniboard-ingress
   annotations:
     # HTTP를 HTTPS로 자동 리다이렉트 (Nginx 컨트롤러 기본값이나 명시적 설정 가능)
     ingress.kubernetes.io/ssl-redirect: "true"
@@ -38,10 +38,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - www.smboard.com
+        - www.miniboard.com
       secretName: tlssecret  
   rules:
-    - host: www.smboard.com
+    - host: www.miniboard.com
       http:
         paths:
           - path: /

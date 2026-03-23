@@ -6,14 +6,18 @@ metadata:
     #nginx.ingress.kubernetes.io/rewrite-target: /
     spec.ingressClassName: nginx
 spec:
+  tls:
+  - hosts:
+    - www.smboard.com
+    secretName: tlssecret
   rules:
-    - host: www.smboard.com
-      http:
-        paths:
-          - path: /
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: apache-service
-                port:
-                  number: 80
+  - host: www.smboard.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: apache-service
+            port:
+              number: 80
