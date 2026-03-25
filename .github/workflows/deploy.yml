@@ -8,8 +8,10 @@ on:
 
 jobs:
   build-deploy:
-    #runs-on: ubuntu-latest # Jenkins의 agent any 역할 (깃허브가 제공하는 리눅스 서버)
-    runs-on: self-hosted # Jenkins의 agent any 역할 (깃허브가 제공하는 리눅스 서버)
+    #Jenkins의 agent any 역할. 
+    #깃허브에서 제공한 클라우드서버에서 빌드와 이미지 생성을 한 다음 배포에 필요한 파일을 전달한 후 쿠버네티스에게 배포를 지시함.
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted # 자체 서버에서 빌드, 이미지 생성, 배포까지 수행
 
     steps:
       # 1. 소스코드 가져오기
