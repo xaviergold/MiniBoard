@@ -40,7 +40,7 @@ public class BoardController {
 		
 	}
 	
-	//미니 게시판 목록 보기
+	//미니 게시판 목록 보기 ...
         //Source Change #1
         //Source Change #2
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
