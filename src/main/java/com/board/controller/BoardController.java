@@ -31,7 +31,7 @@ public class BoardController {
 	
 	/*
 	@Autowired
-	 private miniBoardService service; //의존성 주입으로 객체 생성
+	 private miniBoardService service; //의존성 주입으로 객체 생성...
 	*/
 	
 	private BoardMapper service; 
