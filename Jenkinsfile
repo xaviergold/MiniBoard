@@ -77,10 +77,10 @@ pipeline {
             }
             post {
                 success {
-                    slackSend(channel: "#it교육", color: "#2C953C", message: "smboard 배포가 성공하였습니다.")
+                    slackSend(channel: "#it교육", color: "#2C953C", message: "miniboard 배포가 성공하였습니다.")
                 }
                 failure {
-                    slackSend(channel: "#it교육", color: "#FF3232", message: "smboard 배포가 실패하였습니다.")
+                    slackSend(channel: "#it교육", color: "#FF3232", message: "miniboard 배포가 실패하였습니다.")
                 }
             }
         }
