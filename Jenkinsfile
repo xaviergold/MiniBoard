@@ -23,7 +23,6 @@ pipeline {
                      cp ./springboot/build/libs/MiniBoard-0.0.1-SNAPSHOT.jar ./docker/miniboard/
                      ls -lah ./docker/miniboard/
                    """
-                }
             }
         }
         stage("Docker Login") {
