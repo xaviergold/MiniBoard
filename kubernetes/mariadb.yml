@@ -9,7 +9,6 @@ spec:
       app: mariadb
   template:
     metadata:
-      name: mariadb
       labels:
         app: mariadb
     spec:
@@ -19,13 +18,15 @@ spec:
           path: /home/xavier/volume/mariadb
       containers:
       - name: mariadb
-        image: docker.io/redleon1/mariadb_smboard:{{VERSION}}
+        image: docker.io/redleon1/mariadb_miniboard:{{VERSION}}
         imagePullPolicy: Always
         volumeMounts:
         - name: mariadb-data
           mountPath: /var/lib/mysql
         ports:
         - containerPort: 3306
+      imagePullSecrets:
+      - name: docker-secret
 
 ---
 apiVersion: v1
